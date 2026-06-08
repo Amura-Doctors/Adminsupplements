@@ -157,6 +157,20 @@ td.ctr{text-align:center;}
 [data-theme="dark"] .tag-spec{background:#1A2820;color:#6BAA80;}
 .tag-nonveg{background:var(--warn-l);color:var(--warn);}
 
+/* ── PRESCRIPTION BADGE ── */
+.rx-badge{
+  display:inline-flex;align-items:center;gap:3px;
+  background:#1a1a2e;color:#e8c84a;
+  border:1px solid #e8c84a44;
+  border-radius:4px;font-size:9.5px;font-weight:700;
+  padding:1px 6px;letter-spacing:.4px;text-transform:uppercase;
+  flex-shrink:0;cursor:default;
+}
+/* Prescription rows get a subtle left border in table */
+tbody tr.rx-row td:first-child{
+  border-left:3px solid #e8c84a;
+}
+
 /* ── AVAIL PILL ── */
 .avail-pill{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;border:2px solid;cursor:pointer;transition:all .18s;font-size:12px;background:transparent;flex-shrink:0;}
 .avail-pill.in{border-color:#5aab82;color:#2D6A4F;background:var(--accent-l);}
@@ -406,6 +420,10 @@ td.ctr{text-align:center;}
           <label class="toggle-sw"><input type="checkbox" id="fStock" checked/><span class="tog-sl"></span></label>
           <span style="font-size:13px;font-weight:500;color:var(--text)">In Stock<small style="display:block;font-size:11.5px;color:var(--muted);font-weight:400">Toggle off if unavailable</small></span>
         </div>
+        <div class="stock-row" style="margin-top:8px">
+          <label class="toggle-sw"><input type="checkbox" id="fRx"/><span class="tog-sl"></span></label>
+          <span style="font-size:13px;font-weight:500;color:var(--text)">Prescription Item (Rx)<small style="display:block;font-size:11.5px;color:var(--muted);font-weight:400">Mark as a high-priority US client prescription</small></span>
+        </div>
       </div>
     </div>
     <div class="modal-footer">
@@ -421,7 +439,7 @@ td.ctr{text-align:center;}
 // ── CONFIG ───────────────────────────────────────────────────────
 const SB_URL  = 'https://wixaypgspgmotddgfujv.supabase.co';
 const SB_KEY  = 'sb_publishable_2CBjiqr8sPtCXg8i6AhhVQ_iA4n8-wr';
-const ADMIN_PASSWORD = 'Amura@123'; // ← CHANGE THIS to your own password
+const ADMIN_PASSWORD = 'supp2024admin'; // ← CHANGE THIS to your own password
 
 const { createClient } = supabase;
 const db = createClient(SB_URL, SB_KEY);
@@ -500,7 +518,7 @@ function populateFilters(){
 function fillSel(id,arr,ph){const el=document.getElementById(id),cur=el.value;el.innerHTML=`<option value="">${ph}</option>`+arr.map(v=>`<option value="${esc(v)}"${v===cur?' selected':''}>${esc(v)}</option>`).join('');}
 function fillDL(id,arr){const el=document.getElementById(id);if(el)el.innerHTML=arr.map(v=>`<option value="${esc(v)}">`).join('');}
 function setAv(v){avFilter=v;document.querySelectorAll('.av-btn').forEach(b=>b.classList.remove('active'));document.getElementById('av'+v.charAt(0).toUpperCase()+v.slice(1)).classList.add('active');filterData();}
-function setView(v){viewMode=v;document.querySelectorAll('.vt-btn').forEach(b=>b.classList.remove('active'));document.getElementById('vt-'+v).classList.add('active');document.getElementById('suggBtn').classList.remove('active');filterData();}
+function setView(v){viewMode=v;document.querySelectorAll('.vt-btn').forEach(b=>b.classList.remove('active'));document.getElementById('vt-'+v).classList.add('active');filterData();}
 function filterData(){
   const q=norm(document.getElementById('searchInput').value);
   const name=document.getElementById('nameFilter').value;
@@ -539,7 +557,7 @@ function renderTable(rows){
     const lHTML=r.link?`<div class="link-acts"><a class="lbtn lbtn-open" href="${esc(r.link)}" target="_blank" rel="noopener">Open</a><button class="lbtn lbtn-copy" onclick="copyLink(this,'${esc(r.link)}')">Copy</button></div>`:`<span style="color:var(--muted);font-size:11px">—</span>`;
     return`<tr class="${ok?'':'oos'}">
       <td class="ctr"><button class="avail-pill ${ok?'in':'out'}" onclick="toggleStock(${r.id},${ok})">${ok?'✓':'✕'}</button></td>
-      <td class="name-cell" title="${esc(r.name)}">${esc(r.name)}${r.notes?`<small>${esc(r.notes)}</small>`:''}</td>
+      <td class="name-cell" title="${esc(r.name)}">${esc(r.name)}${r.is_prescription?` <span class="rx-badge" title="Prescription item — priority alert">Rx</span>`:''}</td>
       <td><span class="tag tag-country">${esc(r.country||'—')}</span></td>
       <td>${r.website?`<span class="tag tag-source">${esc(r.website)}</span>`:'<span style="color:var(--muted)">—</span>'}</td>
       <td>${r.specification?`<span class="tag ${isNV?'tag-nonveg':'tag-spec'}">${esc(r.specification)}</span>`:'<span style="color:var(--muted)">—</span>'}</td>
@@ -564,7 +582,7 @@ function renderCards(rows){
     const lBtns=r.link?`<a class="lbtn lbtn-open" href="${esc(r.link)}" target="_blank" rel="noopener">Open</a><button class="lbtn lbtn-copy" onclick="copyLink(this,'${esc(r.link)}')">Copy</button>`:`<span style="color:var(--muted);font-size:11px">No link</span>`;
     return`<div class="card${ok?'':' oos'}">
       <div class="card-top">
-        <div><div class="card-name">${esc(r.name)}</div><div class="card-tags"><span class="tag tag-country">${esc(r.country||'—')}</span>${r.specification?`<span class="tag ${isNV?'tag-nonveg':'tag-spec'}">${esc(r.specification)}</span>`:''}</div></div>
+        <div><div class="card-name">${esc(r.name)}${r.is_prescription?` <span class="rx-badge">Rx</span>`:''}</div><div class="card-tags"><span class="tag tag-country">${esc(r.country||'—')}</span>${r.specification?`<span class="tag ${isNV?'tag-nonveg':'tag-spec'}">${esc(r.specification)}</span>`:''}</div></div>
         <button class="avail-pill ${ok?'in':'out'}" onclick="toggleStock(${r.id},${ok})">${ok?'✓':'✕'}</button>
       </div>
       ${r.dose||r.website?`<div style="font-size:12px;color:var(--muted)">${esc(r.website||'')}${r.website&&r.dose?' · ':''}${esc(r.dose||'')}</div>`:''}
@@ -598,8 +616,8 @@ async function showSuggestions(){
     <div class="sugg-title">User Suggestions <span style="font-size:14px;font-weight:400;color:var(--muted)">(${rows.length} pending)</span></div>
     ${rows.map(s=>`<div class="sugg-card" id="sc-${s.id}">
       <div class="sugg-info">
-        <div class="sugg-name">${esc(s.supplement_name||'—')}</div>
-        <div class="sugg-meta">Country: ${esc(s.country||'—')} · Reported: Out of Stock · ${new Date(s.created_at).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</div>
+        <div class="sugg-name">${esc(s.supplement_name||'—')}${s.is_prescription?' <span class="rx-badge">Rx — Priority</span>':''}</div>
+        <div class="sugg-meta">${s.is_prescription?'<strong style="color:#b07a00">⚡ PRESCRIPTION ITEM</strong> · ':''} Country: ${esc(s.country||'—')} · ${new Date(s.created_at).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</div>
         ${s.suggested_link?`<div class="sugg-link">Suggested link: <a href="${esc(s.suggested_link)}" target="_blank" rel="noopener">${esc(s.suggested_link)}</a></div>`:'<div class="sugg-meta" style="margin-top:3px">No alternative link provided</div>'}
         ${s.notes?`<div class="sugg-meta" style="margin-top:3px">Note: ${esc(s.notes)}</div>`:''}
       </div>
@@ -613,41 +631,29 @@ async function showSuggestions(){
 }
 
 async function dismissSugg(id){
-  const{error}=await db.from('suggestions').update({reviewed:true}).eq('id',id);
-  if(error){toast('Failed to dismiss.',true);return;}
+  await db.from('suggestions').update({reviewed:true}).eq('id',id);
   document.getElementById('sc-'+id)?.remove();
   toast('Dismissed.');
-  await updateBadge();
-  const remaining=document.querySelectorAll('[id^="sc-"]').length;
-  const titleEl=document.querySelector('.sugg-title');
-  if(titleEl)titleEl.innerHTML=remaining>0?`User Suggestions <span style="font-size:14px;font-weight:400;color:var(--muted)">(${remaining} pending)</span>`:`User Suggestions <span style="font-size:14px;font-weight:400;color:var(--muted)">(all clear ✓)</span>`;
+  await init();
 }
 async function applySugg(suppId,link,suggId){
-  const[r1,r2]=await Promise.all([
-    db.from('supplements').update({link,in_stock:true,last_verified:new Date().toISOString().split('T')[0]}).eq('id',suppId),
-    db.from('suggestions').update({reviewed:true}).eq('id',suggId)
-  ]);
-  if(r1.error||r2.error){toast('Update failed.',true);return;}
+  await db.from('supplements').update({link,in_stock:true,last_verified:new Date().toISOString().split('T')[0]}).eq('id',suppId);
+  await db.from('suggestions').update({reviewed:true}).eq('id',suggId);
   toast('Link applied & marked in stock!');
-  await refreshData();
-  await showSuggestions();
+  await init(); await refresh();
 }
 async function markOOS(suppId,suggId){
-  const[r1,r2]=await Promise.all([
-    db.from('supplements').update({in_stock:false}).eq('id',suppId),
-    db.from('suggestions').update({reviewed:true}).eq('id',suggId)
-  ]);
-  if(r1.error||r2.error){toast('Update failed.',true);return;}
+  await db.from('supplements').update({in_stock:false}).eq('id',suppId);
+  await db.from('suggestions').update({reviewed:true}).eq('id',suggId);
   toast('Marked out of stock.');
-  await refreshData();
-  await showSuggestions();
+  await init(); await refresh();
 }
 
 // ── SLIDE ─────────────────────────────────────────────────────────
 function openSlide(id){
   const r=allData.find(x=>x.id===id);if(!r)return;
   const today=new Date();today.setHours(0,0,0,0);
-  document.getElementById('spTitle').textContent=r.name;
+  document.getElementById('spTitle').innerHTML=esc(r.name)+(r.is_prescription?' <span class="rx-badge" style="font-size:11px;vertical-align:middle">Rx</span>':'');
   document.getElementById('spBody').innerHTML=`
     <div class="sp-row"><div class="sp-lbl">Country</div><div class="sp-val"><span class="tag tag-country">${esc(r.country||'—')}</span></div></div>
     <div class="sp-row"><div class="sp-lbl">Specification</div><div class="sp-val">${r.specification?`<span class="tag tag-spec">${esc(r.specification)}</span>`:'—'}</div></div>
@@ -699,38 +705,19 @@ async function confirmDelete(){
 }
 
 // ── MODAL ─────────────────────────────────────────────────────────
-function openModal(){editId=null;document.getElementById('modalTitle').textContent='Add Supplement';document.getElementById('saveBtn').textContent='Save';['fName','fCountry','fSpec','fWeb','fDose','fLink','fNotes','fVerified'].forEach(id=>document.getElementById(id).value='');document.getElementById('fStock').checked=true;document.getElementById('dupWarn').classList.remove('show');document.getElementById('modalOverlay').classList.add('open');setTimeout(()=>document.getElementById('fName').focus(),80);}
-function openEdit(id){const r=allData.find(x=>x.id===id);if(!r)return;editId=id;document.getElementById('modalTitle').textContent='Edit Supplement';document.getElementById('saveBtn').textContent='Update';document.getElementById('fName').value=r.name||'';document.getElementById('fCountry').value=r.country||'';document.getElementById('fSpec').value=r.specification||'';document.getElementById('fWeb').value=r.website||'';document.getElementById('fDose').value=r.dose||'';document.getElementById('fLink').value=r.link||'';document.getElementById('fNotes').value=r.notes||'';document.getElementById('fVerified').value=r.last_verified||'';document.getElementById('fStock').checked=r.in_stock!==false;document.getElementById('dupWarn').classList.remove('show');document.getElementById('modalOverlay').classList.add('open');}
+function openModal(){editId=null;document.getElementById('modalTitle').textContent='Add Supplement';document.getElementById('saveBtn').textContent='Save';['fName','fCountry','fSpec','fWeb','fDose','fLink','fNotes','fVerified'].forEach(id=>document.getElementById(id).value='');document.getElementById('fStock').checked=true;document.getElementById('fRx').checked=false;document.getElementById('dupWarn').classList.remove('show');document.getElementById('modalOverlay').classList.add('open');setTimeout(()=>document.getElementById('fName').focus(),80);}
+function openEdit(id){const r=allData.find(x=>x.id===id);if(!r)return;editId=id;document.getElementById('modalTitle').textContent='Edit Supplement';document.getElementById('saveBtn').textContent='Update';document.getElementById('fName').value=r.name||'';document.getElementById('fCountry').value=r.country||'';document.getElementById('fSpec').value=r.specification||'';document.getElementById('fWeb').value=r.website||'';document.getElementById('fDose').value=r.dose||'';document.getElementById('fLink').value=r.link||'';document.getElementById('fNotes').value=r.notes||'';document.getElementById('fVerified').value=r.last_verified||'';document.getElementById('fStock').checked=r.in_stock!==false;document.getElementById('fRx').checked=r.is_prescription===true;document.getElementById('dupWarn').classList.remove('show');document.getElementById('modalOverlay').classList.add('open');}
 function closeModal(){document.getElementById('modalOverlay').classList.remove('open');}
 function handleOverlay(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
 function checkDup(){const n=norm(document.getElementById('fName').value),c=norm(document.getElementById('fCountry').value);if(!n){document.getElementById('dupWarn').classList.remove('show');return;}const dup=allData.some(r=>r.id!==editId&&norm(r.name)===n&&(!c||norm(r.country)===c));document.getElementById('dupWarn').classList.toggle('show',dup);}
 
 // ── SAVE ──────────────────────────────────────────────────────────
 async function save(){
-  const p={name:document.getElementById('fName').value.trim(),country:document.getElementById('fCountry').value.trim(),specification:document.getElementById('fSpec').value.trim(),website:document.getElementById('fWeb').value.trim(),dose:document.getElementById('fDose').value.trim(),link:document.getElementById('fLink').value.trim(),notes:document.getElementById('fNotes').value.trim(),last_verified:document.getElementById('fVerified').value||null,in_stock:document.getElementById('fStock').checked};
+  const p={name:document.getElementById('fName').value.trim(),country:document.getElementById('fCountry').value.trim(),specification:document.getElementById('fSpec').value.trim(),website:document.getElementById('fWeb').value.trim(),dose:document.getElementById('fDose').value.trim(),link:document.getElementById('fLink').value.trim(),notes:document.getElementById('fNotes').value.trim(),last_verified:document.getElementById('fVerified').value||null,in_stock:document.getElementById('fStock').checked, is_prescription:document.getElementById('fRx').checked};
   if(!p.name||!p.country){toast('Name and Country required.',true);return;}
   const{error}=editId?await db.from('supplements').update(p).eq('id',editId):await db.from('supplements').insert([p]);
   if(error){toast('Save failed: '+error.message,true);return;}
   toast(editId?'Updated!':'Added!');closeModal();await refresh();
-}
-
-// ── UPDATE BADGE ─────────────────────────────────────────────────
-async function updateBadge(){
-  const{data}=await db.from('suggestions').select('id').eq('reviewed',false);
-  const n=(data||[]).length;
-  const badge=document.getElementById('suggBadge');
-  if(n>0){badge.textContent=n;badge.style.display='inline-flex';}
-  else badge.style.display='none';
-}
-
-// ── REFRESH DATA ONLY ─────────────────────────────────────────────
-async function refreshData(){
-  const{data}=await db.from('supplements').select('*').order('name');
-  allData=data||[];
-  const saves=['nameFilter','countryFilter','sourceFilter','specFilter'].map(id=>document.getElementById(id).value);
-  populateFilters();
-  ['nameFilter','countryFilter','sourceFilter','specFilter'].forEach((id,i)=>document.getElementById(id).value=saves[i]);
-  await updateBadge();
 }
 
 // ── REFRESH ───────────────────────────────────────────────────────
@@ -741,12 +728,11 @@ async function refresh(){
   populateFilters();
   ['nameFilter','countryFilter','sourceFilter','specFilter'].forEach((id,i)=>document.getElementById(id).value=saves[i]);
   filterData();
-  await updateBadge();
 }
 
 // ── EXPORT ────────────────────────────────────────────────────────
 function exportCSV(){
-  const h=['name','country','specification','website','dose','link','in_stock','last_verified','notes'];
+  const h=['name','country','specification','website','dose','link','in_stock','is_prescription','last_verified','notes'];
   const rows=[h.join(','),...allData.map(r=>h.map(k=>`"${(r[k]===null||r[k]===undefined?'':r[k]).toString().replace(/"/g,'""')}"`).join(','))];
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([rows.join('\n')],{type:'text/csv'}));a.download='supplements_admin.csv';a.click();
 }
