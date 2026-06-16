@@ -23,34 +23,17 @@
 html,body{height:100%;overflow:hidden;}
 body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);display:flex;flex-direction:column;font-size:14px;transition:background .25s,color .25s;}
 
-/* ── LOGIN SCREEN ── */
-.login-screen{
-  display:flex;align-items:center;justify-content:center;
-  position:fixed;inset:0;background:var(--accent-d);z-index:9999;
-}
-.login-box{
-  background:var(--surface);border-radius:18px;padding:36px;
-  width:100%;max-width:380px;text-align:center;box-shadow:var(--shadow-lg);
-}
+.login-screen{display:flex;align-items:center;justify-content:center;position:fixed;inset:0;background:var(--accent-d);z-index:9999;}
+.login-box{background:var(--surface);border-radius:18px;padding:36px;width:100%;max-width:380px;text-align:center;box-shadow:var(--shadow-lg);}
 .login-box h2{font-family:'DM Serif Display',serif;font-size:24px;margin-bottom:6px;}
 .login-box p{color:var(--muted);font-size:13px;margin-bottom:24px;}
-.login-input{
-  width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:9px;
-  font-family:'DM Sans',sans-serif;font-size:15px;background:var(--bg);
-  color:var(--text);outline:none;margin-bottom:12px;transition:border-color .15s;text-align:center;
-  letter-spacing:3px;
-}
+.login-input{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:9px;font-family:'DM Sans',sans-serif;font-size:15px;background:var(--bg);color:var(--text);outline:none;margin-bottom:12px;transition:border-color .15s;text-align:center;letter-spacing:3px;}
 .login-input:focus{border-color:var(--accent);}
 .login-err{color:var(--warn);font-size:12.5px;margin-bottom:10px;display:none;}
 .login-err.show{display:block;}
 
-/* ── LAYOUT ── */
 .app-shell{display:flex;flex:1;overflow:hidden;}
-.left-panel{
-  width:300px;min-width:260px;flex-shrink:0;background:var(--panel);
-  color:#fff;display:flex;flex-direction:column;
-  box-shadow:4px 0 24px rgba(0,0,0,.15);z-index:10;
-}
+.left-panel{width:300px;min-width:260px;flex-shrink:0;background:var(--panel);color:#fff;display:flex;flex-direction:column;box-shadow:4px 0 24px rgba(0,0,0,.15);z-index:10;}
 .left-top{padding:22px 22px 16px;border-bottom:1px solid rgba(255,255,255,.08);}
 .app-label{font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:4px;}
 .left-top h1{font-family:'DM Serif Display',serif;font-size:21px;color:#fff;line-height:1.2;}
@@ -61,7 +44,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);dis
 .filter-label{font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:4px;}
 .result-count{font-size:11.5px;color:rgba(255,255,255,.38);}
 .result-count strong{color:rgba(255,255,255,.78);}
-
 .search-wrap{position:relative;}
 .search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.38);pointer-events:none;}
 .search-input{width:100%;padding:9px 11px 9px 33px;border:1.5px solid rgba(255,255,255,.11);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;background:rgba(255,255,255,.06);color:#fff;outline:none;transition:all .18s;}
@@ -70,7 +52,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);dis
 select.fsel{width:100%;padding:9px 30px 9px 11px;border:1.5px solid rgba(255,255,255,.11);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;background:rgba(255,255,255,.06) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,0.38)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 11px center;appearance:none;color:#fff;outline:none;cursor:pointer;transition:all .18s;}
 select.fsel:focus{border-color:rgba(255,255,255,.38);}
 select.fsel option{color:var(--text);background:var(--surface);}
-
 .av-toggle{display:flex;gap:5px;}
 .av-btn{flex:1;padding:6px 6px;border-radius:7px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:500;cursor:pointer;transition:all .15s;text-align:center;}
 .av-btn:hover{background:rgba(255,255,255,.11);color:#fff;}
@@ -78,10 +59,9 @@ select.fsel option{color:var(--text);background:var(--surface);}
 .av-btn.active.in{background:rgba(45,106,79,.55);border-color:#5aab82;}
 .av-btn.active.out{background:rgba(196,69,26,.4);border-color:#e07050;}
 
-/* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:5px;padding:8px 13px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer;border:none;transition:all .15s;white-space:nowrap;flex-shrink:0;}
 .btn-light{background:#fff;color:var(--accent-d);}
-.btn-light:hover{background:rgba(255,255,255,.88);transform:translateY(-1px);}
+.btn-light:hover{background:rgba(255,255,255,.88);}
 .btn-ghost{background:rgba(255,255,255,.1);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.16);}
 .btn-ghost:hover{background:rgba(255,255,255,.18);}
 .btn-sm{padding:6px 10px;font-size:11.5px;}
@@ -94,19 +74,12 @@ select.fsel option{color:var(--text);background:var(--surface);}
 .btn-danger{background:var(--warn);color:#fff;}
 .btn-danger:hover{background:#a83a16;}
 
-/* ── RIGHT ── */
 .right-panel{flex:1;display:flex;flex-direction:column;overflow:hidden;background:var(--bg);transition:background .25s;}
 .toolbar{padding:12px 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:var(--surface);flex-shrink:0;gap:10px;transition:background .25s,border-color .25s;}
-.toolbar-left{display:flex;align-items:center;gap:7px;}
 .toolbar-right{display:flex;align-items:center;gap:7px;}
-.view-toggle{display:flex;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;overflow:hidden;}
-.vt-btn{padding:5px 11px;background:transparent;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:var(--muted);transition:all .15s;display:flex;align-items:center;gap:4px;}
-.vt-btn.active{background:var(--accent-d);color:#fff;}
-.vt-btn:not(.active):hover{background:var(--border);}
 .tool-btn{display:inline-flex;align-items:center;gap:4px;padding:5px 10px;border-radius:7px;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;transition:all .14s;white-space:nowrap;}
 .tool-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-l);}
 .tool-btn.active{background:var(--accent-l);border-color:var(--accent);color:var(--accent-d);}
-/* suggestion badge */
 .sugg-badge{display:inline-flex;align-items:center;justify-content:center;background:var(--warn);color:#fff;font-size:10px;font-weight:700;min-width:16px;height:16px;border-radius:100px;padding:0 4px;margin-left:3px;}
 
 .stats-bar{padding:9px 22px;display:flex;gap:7px;flex-wrap:wrap;align-items:center;flex-shrink:0;border-bottom:1px solid var(--border);background:var(--surface);transition:background .25s,border-color .25s;}
@@ -122,10 +95,10 @@ select.fsel option{color:var(--text);background:var(--surface);}
 .spinner{width:28px;height:28px;border:2.5px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .65s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
 
-/* ── TABLE ── */
-.table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);transition:background .25s,border-color .25s;}
+/* TABLE */
+.table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);}
 table{width:100%;border-collapse:collapse;table-layout:fixed;}
-col.c0{width:38px;}col.c1{width:15%;}col.c2{width:9%;}col.c3{width:11%;}col.c4{width:13%;}col.c5{width:8%;}col.c6{width:9%;}col.c7{width:13%;}col.c8{width:13%;}
+col.c0{width:38px;}col.c1{width:15%;}col.c2{width:9%;}col.c3{width:11%;}col.c4{width:12%;}col.c5{width:7%;}col.c6{width:9%;}col.c7{width:11%;}col.c8{width:12%;}
 thead th{background:#F0EDE8;padding:10px 12px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 [data-theme="dark"] thead th{background:#1A1C19;}
 thead th.ctr{text-align:center;}
@@ -138,17 +111,7 @@ td.ctr{text-align:center;}
 .name-cell{font-weight:600;color:var(--text);}
 .name-cell small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
-/* ── CARDS ── */
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;transition:box-shadow .15s,border-color .15s,background .25s;}
-.card:hover{box-shadow:var(--shadow-lg);border-color:var(--accent);}
-.card.oos{opacity:.5;}
-.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
-.card-name{font-size:14px;font-weight:600;color:var(--text);}
-.card-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:3px;}
-.card-actions{display:flex;gap:5px;flex-wrap:wrap;}
-
-/* ── TAGS ── */
+/* TAGS */
 .tag{display:inline-flex;align-items:center;padding:2px 8px;border-radius:100px;font-size:11px;font-weight:600;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .tag-country{background:var(--accent-l);color:var(--accent-d);}
 .tag-source{background:#E6EAF4;color:#2D4280;}
@@ -157,35 +120,25 @@ td.ctr{text-align:center;}
 [data-theme="dark"] .tag-spec{background:#1A2820;color:#6BAA80;}
 .tag-nonveg{background:var(--warn-l);color:var(--warn);}
 
-/* ── PRESCRIPTION BADGE ── */
-.rx-badge{
-  display:inline-flex;align-items:center;gap:3px;
-  background:#1a1a2e;color:#e8c84a;
-  border:1px solid #e8c84a44;
-  border-radius:4px;font-size:9.5px;font-weight:700;
-  padding:1px 6px;letter-spacing:.4px;text-transform:uppercase;
-  flex-shrink:0;cursor:default;
-}
-/* Prescription rows get a subtle left border in table */
-tbody tr.rx-row td:first-child{
-  border-left:3px solid #e8c84a;
-}
-
-/* ── AVAIL PILL ── */
+/* AVAIL PILL */
 .avail-pill{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;border:2px solid;cursor:pointer;transition:all .18s;font-size:12px;background:transparent;flex-shrink:0;}
 .avail-pill.in{border-color:#5aab82;color:#2D6A4F;background:var(--accent-l);}
 .avail-pill.in:hover{background:#b8dece;}
 .avail-pill.out{border-color:#e07050;color:var(--warn);background:var(--warn-l);}
 .avail-pill.out:hover{background:#f8d5cb;}
 
-/* ── VERIFIED ── */
+/* VERIFIED */
 .vdate{font-size:11px;color:var(--muted);white-space:nowrap;}
 .vdate.fresh{color:var(--accent);}
 .vdate.stale{color:#b07030;font-weight:600;}
 .verify-btn{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;color:var(--muted);background:none;border:1px solid var(--border);border-radius:5px;padding:2px 6px;cursor:pointer;transition:all .14s;}
 .verify-btn:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-l);}
 
-/* ── LINK BTNS ── */
+/* USER REPORTED badge in admin */
+.usr-rep{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;background:#fff3e0;border:1px solid #ffb74d;color:#e65100;white-space:nowrap;}
+[data-theme="dark"] .usr-rep{background:#2a1a00;border-color:#b85c00;color:#ffb74d;}
+
+/* LINK BTNS */
 .link-acts{display:flex;gap:4px;}
 .lbtn{display:inline-flex;align-items:center;gap:3px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;padding:4px 8px;border-radius:6px;border:1.5px solid;cursor:pointer;transition:all .14s;white-space:nowrap;text-decoration:none;}
 .lbtn-open{background:var(--accent-l);border-color:#b4d9c8;color:var(--accent-d);}
@@ -194,36 +147,34 @@ tbody tr.rx-row td:first-child{
 .lbtn-copy:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-l);}
 .lbtn-copy.copied{background:var(--accent-l);border-color:var(--accent);color:var(--accent-d);}
 
-/* ── ROW ACTS ── */
+/* ROW ACTS */
 .row-acts{display:flex;gap:3px;}
 .act-btn{display:inline-flex;align-items:center;gap:3px;padding:4px 8px;border-radius:6px;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;transition:all .14s;white-space:nowrap;}
 .act-btn:hover{background:var(--accent-l);border-color:var(--accent);color:var(--accent-d);}
 .act-btn.del:hover{background:var(--warn-l);border-color:var(--warn);color:var(--warn);}
 
-/* ── SUGGESTIONS PANEL ── */
+/* SUGGESTIONS PANEL */
 .sugg-panel{padding:18px 22px 40px;}
 .sugg-title{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:16px;color:var(--text);}
 .sugg-empty{color:var(--muted);font-size:14px;text-align:center;padding:40px;}
-.sugg-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:8px;box-shadow:var(--shadow);display:flex;align-items:flex-start;justify-content:space-between;gap:14px;transition:background .25s;}
+.sugg-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:8px;box-shadow:var(--shadow);display:flex;align-items:flex-start;justify-content:space-between;gap:14px;}
 .sugg-info{flex:1;min-width:0;}
 .sugg-name{font-weight:600;font-size:14px;color:var(--text);}
 .sugg-meta{font-size:12px;color:var(--muted);margin-top:3px;}
-.sugg-link{font-size:12px;color:var(--accent);word-break:break-all;margin-top:4px;}
-.sugg-link a{color:var(--accent);text-decoration:none;}
+.sugg-link a{color:var(--accent);text-decoration:none;font-size:12px;word-break:break-all;}
 .sugg-link a:hover{text-decoration:underline;}
-.sugg-date{font-size:11px;color:var(--muted);flex-shrink:0;}
 .sugg-acts{display:flex;gap:6px;align-items:center;flex-shrink:0;flex-direction:column;}
 
-/* ── MODALS ── */
+/* MODALS */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,8,6,.6);z-index:500;align-items:center;justify-content:center;backdrop-filter:blur(4px);}
 .modal-overlay.open{display:flex;}
-.modal{background:var(--surface);border-radius:18px;padding:26px;width:100%;max-width:520px;box-shadow:var(--shadow-lg);animation:fadeUp .2s ease;max-height:92vh;overflow-y:auto;transition:background .25s;}
+.modal{background:var(--surface);border-radius:18px;padding:26px;width:100%;max-width:520px;box-shadow:var(--shadow-lg);animation:fadeUp .2s ease;max-height:92vh;overflow-y:auto;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px) scale(.97);}to{opacity:1;transform:none;}}
 .modal h2{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:18px;color:var(--text);}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
 .form-grid .full{grid-column:1/-1;}
 .field label{display:block;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:5px;}
-.field input,.field select,.field textarea{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13.5px;background:var(--bg);color:var(--text);outline:none;transition:border-color .15s,background .25s;}
+.field input,.field select,.field textarea{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13.5px;background:var(--bg);color:var(--text);outline:none;transition:border-color .15s;}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);background:var(--surface);}
 .field textarea{resize:vertical;min-height:56px;}
 .stock-row{display:flex;align-items:center;gap:10px;padding:5px 0;}
@@ -244,7 +195,7 @@ tbody tr.rx-row td:first-child{
 .del-box p{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.5;}
 .del-box-acts{display:flex;gap:8px;justify-content:center;}
 
-/* ── SLIDE PANEL ── */
+/* SLIDE */
 .slide-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:300;backdrop-filter:blur(2px);}
 .slide-overlay.open{display:block;}
 .slide-panel{position:fixed;right:0;top:0;bottom:0;width:380px;background:var(--surface);box-shadow:var(--shadow-lg);z-index:301;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);}
@@ -269,11 +220,10 @@ tbody tr.rx-row td:first-child{
 </head>
 <body>
 
-<!-- ── LOGIN ── -->
 <div class="login-screen" id="loginScreen">
   <div class="login-box">
     <h2>Admin Access</h2>
-    <p>Enter your password to continue</p>
+    <p>Supplement Repository · Amura Health</p>
     <input class="login-input" id="loginInput" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')tryLogin()"/>
     <div class="login-err" id="loginErr">Incorrect password. Try again.</div>
     <button class="btn btn-save" style="width:100%;justify-content:center;padding:12px" onclick="tryLogin()">Unlock</button>
@@ -281,7 +231,6 @@ tbody tr.rx-row td:first-child{
 </div>
 
 <div class="app-shell" id="appShell" style="display:none">
-<!-- ── LEFT ── -->
 <aside class="left-panel">
   <div class="left-top">
     <div class="app-label">Admin Panel</div>
@@ -330,35 +279,22 @@ tbody tr.rx-row td:first-child{
       <div class="filter-label">Specification</div>
       <select class="fsel" id="specFilter" onchange="filterData()"><option value="">All</option></select>
     </div>
-    <button class="btn btn-clear" onclick="clearAll()">
-      <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      Clear filters
-    </button>
+    <button class="btn btn-clear" onclick="clearAll()">✕ Clear filters</button>
   </div>
   <div class="left-footer">
     <span class="result-count" id="resultCount"></span>
+    <button class="btn btn-clear" style="font-size:10px" onclick="logout()">Log out</button>
   </div>
 </aside>
 
-<!-- ── RIGHT ── -->
 <div class="right-panel">
   <div class="toolbar">
-    <div class="toolbar-left">
-      <div class="view-toggle">
-        <button class="vt-btn active" id="vt-table" onclick="setView('table')">
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="9" x2="9" y2="21"/></svg>
-          Table
-        </button>
-        <button class="vt-btn" id="vt-cards" onclick="setView('cards')">
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-          Cards
-        </button>
+    <div style="display:flex;align-items:center;gap:7px;">
       </div>
-    </div>
     <div class="toolbar-right">
       <button class="tool-btn" id="suggBtn" onclick="showSuggestions()">
         <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        Suggestions
+        User Reports
         <span class="sugg-badge" id="suggBadge" style="display:none">0</span>
       </button>
       <button class="tool-btn" onclick="window.print()">
@@ -378,7 +314,6 @@ tbody tr.rx-row td:first-child{
 </div>
 </div>
 
-<!-- ── SLIDE PANEL ── -->
 <div class="slide-overlay" id="slideOverlay" onclick="closeSlide()"></div>
 <div class="slide-panel" id="slidePanel">
   <div class="sp-header">
@@ -389,7 +324,6 @@ tbody tr.rx-row td:first-child{
   <div class="sp-actions" id="spActions"></div>
 </div>
 
-<!-- ── DELETE CONFIRM ── -->
 <div class="del-confirm" id="delConfirm">
   <div class="del-box">
     <h3>Delete supplement?</h3>
@@ -401,11 +335,10 @@ tbody tr.rx-row td:first-child{
   </div>
 </div>
 
-<!-- ── ADD/EDIT MODAL ── -->
 <div class="modal-overlay" id="modalOverlay" onclick="handleOverlay(event)">
   <div class="modal">
     <h2 id="modalTitle">Add Supplement</h2>
-    <div class="dup-warn" id="dupWarn">⚠ Similar entry already exists.</div>
+    <div class="dup-warn" id="dupWarn">⚠ Similar entry already exists — check before saving.</div>
     <div class="form-grid">
       <div class="field full"><label>Supplement Name *</label><input id="fName" type="text" list="nameList" oninput="checkDup()"/><datalist id="nameList"></datalist></div>
       <div class="field"><label>Country *</label><input id="fCountry" type="text" list="countryList"/><datalist id="countryList"></datalist></div>
@@ -420,10 +353,6 @@ tbody tr.rx-row td:first-child{
           <label class="toggle-sw"><input type="checkbox" id="fStock" checked/><span class="tog-sl"></span></label>
           <span style="font-size:13px;font-weight:500;color:var(--text)">In Stock<small style="display:block;font-size:11.5px;color:var(--muted);font-weight:400">Toggle off if unavailable</small></span>
         </div>
-        <div class="stock-row" style="margin-top:8px">
-          <label class="toggle-sw"><input type="checkbox" id="fRx"/><span class="tog-sl"></span></label>
-          <span style="font-size:13px;font-weight:500;color:var(--text)">Prescription Item (Rx)<small style="display:block;font-size:11.5px;color:var(--muted);font-weight:400">Mark as a high-priority US client prescription</small></span>
-        </div>
       </div>
     </div>
     <div class="modal-footer">
@@ -436,128 +365,117 @@ tbody tr.rx-row td:first-child{
 <div id="toast"></div>
 
 <script>
-// ── CONFIG ───────────────────────────────────────────────────────
-const SB_URL  = 'https://wixaypgspgmotddgfujv.supabase.co';
-const SB_KEY  = 'sb_publishable_2CBjiqr8sPtCXg8i6AhhVQ_iA4n8-wr';
-const ADMIN_PASSWORD = 'Amura@123'; // ← CHANGE THIS to your own password
-
+const SB_URL = 'https://wixaypgspgmotddgfujv.supabase.co';
+const SB_KEY = 'sb_publishable_2CBjiqr8sPtCXg8i6AhhVQ_iA4n8-wr';
+const ADMIN_PW = 'Amura@123';
 const { createClient } = supabase;
 const db = createClient(SB_URL, SB_KEY);
 
-let allData   = [];
-let editId    = null;
-let deleteId  = null;
-let avFilter  = 'all';
-let viewMode  = 'table';
-let darkMode  = localStorage.getItem('dark_admin') === '1';
+let allData=[], pendingSuggs=[], editId=null, deleteId=null, avFilter='all', darkMode=localStorage.getItem('dark_admin')==='1';
 
-// ── DARK MODE ────────────────────────────────────────────────────
-if (darkMode) document.documentElement.setAttribute('data-theme','dark');
-function toggleDark() {
-  darkMode = !darkMode;
-  document.documentElement.setAttribute('data-theme', darkMode?'dark':'light');
-  localStorage.setItem('dark_admin', darkMode?'1':'0');
-  document.getElementById('darkBtn').classList.toggle('active', darkMode);
-}
+if(darkMode) document.documentElement.setAttribute('data-theme','dark');
+function toggleDark(){darkMode=!darkMode;document.documentElement.setAttribute('data-theme',darkMode?'dark':'light');localStorage.setItem('dark_admin',darkMode?'1':'0');document.getElementById('darkBtn').classList.toggle('active',darkMode);}
 
-// ── LOGIN ────────────────────────────────────────────────────────
-function tryLogin() {
-  const val = document.getElementById('loginInput').value;
-  if (val === ADMIN_PASSWORD) {
-    document.getElementById('loginScreen').style.display = 'none';
-    document.getElementById('appShell').style.display = 'flex';
+function tryLogin(){
+  const v=document.getElementById('loginInput').value;
+  if(v===ADMIN_PW){
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('appShell').style.display='flex';
     sessionStorage.setItem('admin_auth','1');
     init();
   } else {
     document.getElementById('loginErr').classList.add('show');
-    document.getElementById('loginInput').value = '';
+    document.getElementById('loginInput').value='';
     document.getElementById('loginInput').focus();
   }
 }
-// Check if already authenticated this session
-if (sessionStorage.getItem('admin_auth')==='1') {
-  document.getElementById('loginScreen').style.display = 'none';
-  document.getElementById('appShell').style.display = 'flex';
+function logout(){sessionStorage.removeItem('admin_auth');location.reload();}
+
+if(sessionStorage.getItem('admin_auth')==='1'){
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('appShell').style.display='flex';
 }
 
-document.addEventListener('keydown', e => {
-  if (e.key==='/' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) { e.preventDefault(); document.getElementById('searchInput').focus(); }
-  if (e.key==='Escape') { closeModal(); closeDelConfirm(); closeSlide(); }
-  if (document.getElementById('loginScreen').style.display!=='none' && e.key==='Enter') tryLogin();
+document.addEventListener('keydown',e=>{
+  if(e.key==='/'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();document.getElementById('searchInput').focus();}
+  if(e.key==='Escape'){closeModal();closeDelConfirm();closeSlide();}
 });
 
-// ── NORM ─────────────────────────────────────────────────────────
 function norm(s){return(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');}
 
-// ── INIT ─────────────────────────────────────────────────────────
-async function init() {
-  const [{data,error}, suggRes] = await Promise.all([
+async function init(){
+  const [{data,error},suggRes]=await Promise.all([
     db.from('supplements').select('*').order('name'),
     db.from('suggestions').select('*').eq('reviewed',false).order('created_at',{ascending:false})
   ]);
-  if (error) { document.getElementById('content').innerHTML=`<div class="loading-wrap"><p style="color:var(--warn)">Connection failed: ${error.message}</p></div>`; return; }
-  allData = data||[];
-  const pending = (suggRes.data||[]).length;
-  const badge = document.getElementById('suggBadge');
-  if (pending>0){badge.textContent=pending;badge.style.display='inline-flex';}
-  else badge.style.display='none';
+  if(error){document.getElementById('content').innerHTML=`<div class="loading-wrap"><p style="color:var(--warn)">Connection failed: ${error.message}</p></div>`;return;}
+  allData=data||[];
+  pendingSuggs=suggRes.data||[];
+  updateSuggBadge();
   populateFilters();
   filterData();
 }
 
-// ── FILTERS ──────────────────────────────────────────────────────
+function updateSuggBadge(){
+  const b=document.getElementById('suggBadge');
+  if(pendingSuggs.length>0){b.textContent=pendingSuggs.length;b.style.display='inline-flex';}
+  else b.style.display='none';
+}
+
 function populateFilters(){
   const u=k=>[...new Set(allData.map(r=>r[k]).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
-  fillSel('nameFilter',u('name'),'All');
-  fillSel('countryFilter',u('country'),'All');
-  fillSel('sourceFilter',u('website'),'All');
-  fillSel('specFilter',u('specification'),'All');
-  fillDL('nameList',u('name'));fillDL('countryList',u('country'));
-  fillDL('specList',u('specification'));fillDL('sourceList',u('website'));
+  fillSel('nameFilter',u('name'),'All');fillSel('countryFilter',u('country'),'All');fillSel('sourceFilter',u('website'),'All');fillSel('specFilter',u('specification'),'All');
+  fillDL('nameList',u('name'));fillDL('countryList',u('country'));fillDL('specList',u('specification'));fillDL('sourceList',u('website'));
 }
 function fillSel(id,arr,ph){const el=document.getElementById(id),cur=el.value;el.innerHTML=`<option value="">${ph}</option>`+arr.map(v=>`<option value="${esc(v)}"${v===cur?' selected':''}>${esc(v)}</option>`).join('');}
 function fillDL(id,arr){const el=document.getElementById(id);if(el)el.innerHTML=arr.map(v=>`<option value="${esc(v)}">`).join('');}
 function setAv(v){avFilter=v;document.querySelectorAll('.av-btn').forEach(b=>b.classList.remove('active'));document.getElementById('av'+v.charAt(0).toUpperCase()+v.slice(1)).classList.add('active');filterData();}
-function setView(v){viewMode=v;document.querySelectorAll('.vt-btn').forEach(b=>b.classList.remove('active'));document.getElementById('vt-'+v).classList.add('active');filterData();}
 function filterData(){
   const q=norm(document.getElementById('searchInput').value);
-  const name=document.getElementById('nameFilter').value;
-  const country=document.getElementById('countryFilter').value;
-  const source=document.getElementById('sourceFilter').value;
-  const spec=document.getElementById('specFilter').value;
+  const name=document.getElementById('nameFilter').value,country=document.getElementById('countryFilter').value,source=document.getElementById('sourceFilter').value,spec=document.getElementById('specFilter').value;
   const filtered=allData.filter(r=>{
     const hay=norm((r.name||'')+(r.website||'')+(r.dose||'')+(r.notes||'')+(r.specification||'')+(r.country||''));
-    return(!q||hay.includes(q))&&(!name||r.name===name)&&(!country||r.country===country)&&(!source||r.website===source)&&(!spec||r.specification===spec||(r.specification||'').toLowerCase()==='none specific')&&(avFilter==='all'||(avFilter==='in'&&r.in_stock!==false)||(avFilter==='out'&&r.in_stock===false));
+    return(!q||hay.includes(q))&&(!name||r.name===name)&&(!country||r.country===country)&&(!source||r.website===source)&&(!spec||r.specification===spec)&&(avFilter==='all'||(avFilter==='in'&&r.in_stock!==false)||(avFilter==='out'&&r.in_stock===false));
   });
   renderStats(filtered);
-  viewMode==='table'?renderTable(filtered):renderCards(filtered);
+  renderTable(filtered);
 }
 function clearAll(){document.getElementById('searchInput').value='';['nameFilter','countryFilter','sourceFilter','specFilter'].forEach(id=>document.getElementById(id).value='');setAv('all');}
 
-// ── STATS ─────────────────────────────────────────────────────────
 function renderStats(rows){
   const outs=rows.filter(r=>r.in_stock===false).length;
   const supps=new Set(rows.map(r=>r.name).filter(Boolean)).size;
   const countries=new Set(rows.map(r=>r.country).filter(Boolean)).size;
-  document.getElementById('statsBar').innerHTML=`<div class="stat-chip"><strong>${rows.length}</strong> Entries</div><div class="stat-chip"><strong>${supps}</strong> Supplements</div><div class="stat-chip"><strong>${countries}</strong> Countries</div>${outs?`<div class="stat-chip danger"><strong>${outs}</strong> Out of Stock</div>`:''}`;
+  const reportedIds=new Set(pendingSuggs.map(s=>s.supplement_id));
+  const userReported=rows.filter(r=>reportedIds.has(r.id)).length;
+  document.getElementById('statsBar').innerHTML=
+    `<div class="stat-chip"><strong>${rows.length}</strong> Entries</div>`+
+    `<div class="stat-chip"><strong>${supps}</strong> Supplements</div>`+
+    `<div class="stat-chip"><strong>${countries}</strong> Countries</div>`+
+    (outs?`<div class="stat-chip danger"><strong>${outs}</strong> Admin OOS</div>`:'')+
+    (userReported?`<div class="stat-chip gold"><strong>${userReported}</strong> User-Reported OOS</div>`:'');
   document.getElementById('resultCount').innerHTML=`<strong>${rows.length}</strong> shown`;
 }
 
-// ── TABLE ─────────────────────────────────────────────────────────
 function renderTable(rows){
   const el=document.getElementById('content');
   if(!rows.length){el.innerHTML='<div class="empty-wrap">No supplements match.</div>';return;}
   const today=new Date();today.setHours(0,0,0,0);
+  const reportedIds=new Set(pendingSuggs.map(s=>s.supplement_id));
   el.innerHTML=`<div class="table-wrap"><table>
   <colgroup><col class="c0"><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"></colgroup>
-  <thead><tr><th class="ctr">✓</th><th>Supplement</th><th>Country</th><th>Source</th><th>Specification</th><th>Dose</th><th>Verified</th><th>Link</th><th>Actions</th></tr></thead>
+  <thead><tr>
+    <th class="ctr">Stock</th><th>Supplement</th><th>Country</th><th>Source</th>
+    <th>Specification</th><th>Dose</th><th>Verified</th><th>Link</th><th>Actions</th>
+  </tr></thead>
   <tbody>${rows.map(r=>{
     const ok=r.in_stock!==false,isNV=/non-veg|bovine|marine/i.test(r.specification||'');
     const vHTML=verifyHTML(r.last_verified,today);
     const lHTML=r.link?`<div class="link-acts"><a class="lbtn lbtn-open" href="${esc(r.link)}" target="_blank" rel="noopener">Open</a><button class="lbtn lbtn-copy" onclick="copyLink(this,'${esc(r.link)}')">Copy</button></div>`:`<span style="color:var(--muted);font-size:11px">—</span>`;
+    const repBadge=reportedIds.has(r.id)?`<span class="usr-rep" title="A user reported this as out of stock">⚑ User OOS</span>`:'';
     return`<tr class="${ok?'':'oos'}">
-      <td class="ctr"><button class="avail-pill ${ok?'in':'out'}" onclick="toggleStock(${r.id},${ok})">${ok?'✓':'✕'}</button></td>
-      <td class="name-cell" title="${esc(r.name)}">${esc(r.name)}${r.is_prescription?` <span class="rx-badge" title="Prescription item — priority alert">Rx</span>`:''}</td>
+      <td class="ctr"><button class="avail-pill ${ok?'in':'out'}" onclick="toggleStock(${r.id},${ok})" title="Click to toggle">${ok?'✓':'✕'}</button></td>
+      <td class="name-cell" title="${esc(r.name)}">${esc(r.name)}${repBadge?`<small style="white-space:normal">${repBadge}</small>`:''}${r.notes?`<small>${esc(r.notes)}</small>`:''}</td>
       <td><span class="tag tag-country">${esc(r.country||'—')}</span></td>
       <td>${r.website?`<span class="tag tag-source">${esc(r.website)}</span>`:'<span style="color:var(--muted)">—</span>'}</td>
       <td>${r.specification?`<span class="tag ${isNV?'tag-nonveg':'tag-spec'}">${esc(r.specification)}</span>`:'<span style="color:var(--muted)">—</span>'}</td>
@@ -573,26 +491,6 @@ function renderTable(rows){
   }).join('')}</tbody></table></div>`;
 }
 
-// ── CARDS ─────────────────────────────────────────────────────────
-function renderCards(rows){
-  const el=document.getElementById('content');
-  if(!rows.length){el.innerHTML='<div class="empty-wrap">No supplements match.</div>';return;}
-  el.innerHTML=`<div class="cards-grid">${rows.map(r=>{
-    const ok=r.in_stock!==false,isNV=/non-veg|bovine|marine/i.test(r.specification||'');
-    const lBtns=r.link?`<a class="lbtn lbtn-open" href="${esc(r.link)}" target="_blank" rel="noopener">Open</a><button class="lbtn lbtn-copy" onclick="copyLink(this,'${esc(r.link)}')">Copy</button>`:`<span style="color:var(--muted);font-size:11px">No link</span>`;
-    return`<div class="card${ok?'':' oos'}">
-      <div class="card-top">
-        <div><div class="card-name">${esc(r.name)}${r.is_prescription?` <span class="rx-badge">Rx</span>`:''}</div><div class="card-tags"><span class="tag tag-country">${esc(r.country||'—')}</span>${r.specification?`<span class="tag ${isNV?'tag-nonveg':'tag-spec'}">${esc(r.specification)}</span>`:''}</div></div>
-        <button class="avail-pill ${ok?'in':'out'}" onclick="toggleStock(${r.id},${ok})">${ok?'✓':'✕'}</button>
-      </div>
-      ${r.dose||r.website?`<div style="font-size:12px;color:var(--muted)">${esc(r.website||'')}${r.website&&r.dose?' · ':''}${esc(r.dose||'')}</div>`:''}
-      <div class="card-actions">${lBtns}</div>
-      <div class="row-acts"><button class="act-btn" onclick="openSlide(${r.id})">View</button><button class="act-btn" onclick="openEdit(${r.id})">Edit</button><button class="act-btn del" onclick="askDel(${r.id},'${esc(r.name)}')">Del</button></div>
-    </div>`;
-  }).join('')}</div>`;
-}
-
-// ── VERIFY HTML ───────────────────────────────────────────────────
 function verifyHTML(lv,today){
   if(!lv)return`<span class="vdate" style="font-style:italic">Never</span>`;
   const d=new Date(lv),diff=Math.floor((today-d)/86400000),label=d.toLocaleDateString('en-GB',{day:'numeric',month:'short'});
@@ -601,76 +499,87 @@ function verifyHTML(lv,today){
   return`<span class="vdate stale">⚠ ${label}</span>`;
 }
 
-// ── SUGGESTIONS VIEW ──────────────────────────────────────────────
+// SUGGESTIONS VIEW
 async function showSuggestions(){
   const {data,error}=await db.from('suggestions').select('*').eq('reviewed',false).order('created_at',{ascending:false});
   const el=document.getElementById('content');
-  if(error){el.innerHTML=`<div class="empty-wrap" style="color:var(--warn)">Failed to load suggestions.</div>`;return;}
-  const rows=data||[];
   document.getElementById('suggBtn').classList.add('active');
+  if(error){el.innerHTML=`<div class="empty-wrap" style="color:var(--warn)">Failed to load.</div>`;return;}
+  const rows=data||[];
+  pendingSuggs=rows;
+  updateSuggBadge();
   if(!rows.length){
-    el.innerHTML=`<div class="sugg-panel"><div class="sugg-title">User Suggestions</div><div class="sugg-empty">No pending suggestions. All clear ✓</div></div>`;
+    el.innerHTML=`<div class="sugg-panel"><div class="sugg-title">User Reports</div><div class="sugg-empty">No pending reports. All clear ✓</div></div>`;
     return;
   }
   el.innerHTML=`<div class="sugg-panel">
-    <div class="sugg-title">User Suggestions <span style="font-size:14px;font-weight:400;color:var(--muted)">(${rows.length} pending)</span></div>
-    ${rows.map(s=>`<div class="sugg-card" id="sc-${s.id}">
+    <div class="sugg-title">User Reports <span style="font-size:14px;font-weight:400;color:var(--muted)">(${rows.length} pending)</span></div>
+    ${rows.map(s=>{
+      const origSupp = allData.find(x => x.id === s.supplement_id);
+      const origLink = origSupp && origSupp.link ? origSupp.link : null;
+      return `<div class="sugg-card" id="sc-${s.id}">
       <div class="sugg-info">
-        <div class="sugg-name">${esc(s.supplement_name||'—')}${s.is_prescription?' <span class="rx-badge">Rx — Priority</span>':''}</div>
-        <div class="sugg-meta">${s.is_prescription?'<strong style="color:#b07a00">⚡ PRESCRIPTION ITEM</strong> · ':''} Country: ${esc(s.country||'—')} · ${new Date(s.created_at).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</div>
-        ${s.suggested_link?`<div class="sugg-link">Suggested link: <a href="${esc(s.suggested_link)}" target="_blank" rel="noopener">${esc(s.suggested_link)}</a></div>`:'<div class="sugg-meta" style="margin-top:3px">No alternative link provided</div>'}
-        ${s.notes?`<div class="sugg-meta" style="margin-top:3px">Note: ${esc(s.notes)}</div>`:''}
+        <div class="sugg-name">${esc(s.supplement_name||'—')}</div>
+        <div class="sugg-meta">Country: ${esc(s.country||'—')} · Reported out of stock · ${new Date(s.created_at).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</div>
+        
+        ${origLink ? `<div style="margin-top:8px;margin-bottom:4px;"><span style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;">Current Link:</span> <a href="${esc(origLink)}" target="_blank" rel="noopener" style="font-size:12.5px;color:var(--accent);margin-left:4px;font-weight:500;">↗ Open Original Link</a></div>` : ''}
+
+        ${s.suggested_link
+          ?`<div style="display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap;">
+              <span style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;">Suggested link</span>
+              <a class="lbtn lbtn-open" href="${esc(s.suggested_link)}" target="_blank" rel="noopener" style="padding:4px 10px;font-size:11.5px;">↗ Open Suggestion</a>
+            </div>`
+          :'<div class="sugg-meta" style="margin-top:2px">No alternative link suggested</div>'}
+        ${s.notes?`<div class="sugg-meta" style="margin-top:4px">Note: ${esc(s.notes)}</div>`:''}
       </div>
       <div class="sugg-acts">
         <button class="act-btn del" onclick="dismissSugg(${s.id})">Dismiss</button>
         ${s.suggested_link?`<button class="act-btn" onclick="applySugg(${s.supplement_id},'${esc(s.suggested_link)}',${s.id})">Apply Link</button>`:''}
         <button class="act-btn" style="color:var(--warn);border-color:var(--warn)" onclick="markOOS(${s.supplement_id},${s.id})">Mark OOS</button>
       </div>
-    </div>`).join('')}
+    </div>`}).join('')}
   </div>`;
 }
 
-async function dismissSugg(id){
-  await db.from('suggestions').update({reviewed:true}).eq('id',id);
-  document.getElementById('sc-'+id)?.remove();
-  toast('Dismissed.');
-  await init();
-}
+async function dismissSugg(id){await db.from('suggestions').update({reviewed:true}).eq('id',id);document.getElementById('sc-'+id)?.remove();pendingSuggs=pendingSuggs.filter(s=>s.id!==id);updateSuggBadge();toast('Dismissed.');}
 async function applySugg(suppId,link,suggId){
   await db.from('supplements').update({link,in_stock:true,last_verified:new Date().toISOString().split('T')[0]}).eq('id',suppId);
   await db.from('suggestions').update({reviewed:true}).eq('id',suggId);
-  toast('Link applied & marked in stock!');
-  await init(); await refresh();
+  pendingSuggs=pendingSuggs.filter(s=>s.id!==suggId);
+  toast('Link applied & marked in stock!');await refresh();await showSuggestions();
 }
 async function markOOS(suppId,suggId){
   await db.from('supplements').update({in_stock:false}).eq('id',suppId);
   await db.from('suggestions').update({reviewed:true}).eq('id',suggId);
-  toast('Marked out of stock.');
-  await init(); await refresh();
+  pendingSuggs=pendingSuggs.filter(s=>s.id!==suggId);
+  toast('Marked out of stock.');await refresh();await showSuggestions();
 }
 
-// ── SLIDE ─────────────────────────────────────────────────────────
+// SLIDE
 function openSlide(id){
   const r=allData.find(x=>x.id===id);if(!r)return;
   const today=new Date();today.setHours(0,0,0,0);
-  document.getElementById('spTitle').innerHTML=esc(r.name)+(r.is_prescription?' <span class="rx-badge" style="font-size:11px;vertical-align:middle">Rx</span>':'');
+  const reportedIds=new Set(pendingSuggs.map(s=>s.supplement_id));
+  document.getElementById('spTitle').textContent=r.name;
   document.getElementById('spBody').innerHTML=`
     <div class="sp-row"><div class="sp-lbl">Country</div><div class="sp-val"><span class="tag tag-country">${esc(r.country||'—')}</span></div></div>
     <div class="sp-row"><div class="sp-lbl">Specification</div><div class="sp-val">${r.specification?`<span class="tag tag-spec">${esc(r.specification)}</span>`:'—'}</div></div>
     <div class="sp-row"><div class="sp-lbl">Source</div><div class="sp-val">${r.website?`<span class="tag tag-source">${esc(r.website)}</span>`:'—'}</div></div>
     <div class="sp-row"><div class="sp-lbl">Dose</div><div class="sp-val" style="font-weight:600">${esc(r.dose||'—')}</div></div>
-    <div class="sp-row"><div class="sp-lbl">Availability</div><div class="sp-val">${r.in_stock!==false?'<span style="color:var(--accent);font-weight:600">✓ In Stock</span>':'<span style="color:var(--warn);font-weight:600">✕ Out of Stock</span>'}</div></div>
+    <div class="sp-row"><div class="sp-lbl">Admin Stock Status</div><div class="sp-val">${r.in_stock!==false?'<span style="color:var(--accent);font-weight:600">✓ In Stock</span>':'<span style="color:var(--warn);font-weight:600">✕ Out of Stock</span>'}</div></div>
+    ${reportedIds.has(r.id)?`<div class="sp-row"><div class="sp-lbl">User Report</div><div class="sp-val"><span class="usr-rep">⚑ Reported out of stock by user</span></div></div>`:''}
     <div class="sp-row"><div class="sp-lbl">Last Verified</div><div class="sp-val">${verifyHTML(r.last_verified,today)}</div></div>
     ${r.notes?`<div class="sp-row"><div class="sp-lbl">Notes</div><div class="sp-val" style="font-size:13px;color:var(--muted)">${esc(r.notes)}</div></div>`:''}
     ${r.link?`<div class="sp-row"><div class="sp-lbl">Link</div><div class="sp-val" style="word-break:break-all;font-size:11.5px;color:var(--muted)">${esc(r.link)}</div></div>`:''}
   `;
-  document.getElementById('spActions').innerHTML=r.link?`<a class="lbtn lbtn-open" style="padding:7px 14px;font-size:12.5px" href="${esc(r.link)}" target="_blank" rel="noopener">Open</a><button class="lbtn lbtn-copy" style="padding:7px 14px;font-size:12.5px" onclick="copyLink(this,'${esc(r.link)}')">Copy</button><button class="act-btn" style="margin-left:auto" onclick="closeSlide();openEdit(${r.id})">Edit</button>`:`<button class="act-btn" style="margin-left:auto" onclick="closeSlide();openEdit(${r.id})">Edit</button>`;
+  document.getElementById('spActions').innerHTML=r.link
+    ?`<a class="lbtn lbtn-open" style="padding:7px 14px;font-size:12.5px" href="${esc(r.link)}" target="_blank" rel="noopener">Open</a><button class="lbtn lbtn-copy" style="padding:7px 14px;font-size:12.5px" onclick="copyLink(this,'${esc(r.link)}')">Copy</button><button class="act-btn" style="margin-left:auto" onclick="closeSlide();openEdit(${r.id})">Edit</button>`
+    :`<button class="act-btn" style="margin-left:auto" onclick="closeSlide();openEdit(${r.id})">Edit</button>`;
   document.getElementById('slideOverlay').classList.add('open');
   document.getElementById('slidePanel').classList.add('open');
 }
 function closeSlide(){document.getElementById('slideOverlay').classList.remove('open');document.getElementById('slidePanel').classList.remove('open');}
 
-// ── TOGGLE STOCK ──────────────────────────────────────────────────
 async function toggleStock(id,cur){
   const{error}=await db.from('supplements').update({in_stock:!cur}).eq('id',id);
   if(error){toast('Failed.',true);return;}
@@ -678,7 +587,6 @@ async function toggleStock(id,cur){
   toast(!cur?'Marked in stock.':'Marked out of stock.');filterData();
 }
 
-// ── MARK VERIFIED ─────────────────────────────────────────────────
 async function markVerified(id){
   const today=new Date().toISOString().split('T')[0];
   const{error}=await db.from('supplements').update({last_verified:today}).eq('id',id);
@@ -687,13 +595,11 @@ async function markVerified(id){
   toast('Verified ✓');filterData();
 }
 
-// ── COPY ──────────────────────────────────────────────────────────
 async function copyLink(btn,url){
-  try{await navigator.clipboard.writeText(url);const orig=btn.innerHTML;btn.classList.add('copied');btn.innerHTML='✓ Copied';setTimeout(()=>{btn.classList.remove('copied');btn.innerHTML=orig;},2200);}
+  try{await navigator.clipboard.writeText(url);const o=btn.innerHTML;btn.classList.add('copied');btn.innerHTML='✓ Copied';setTimeout(()=>{btn.classList.remove('copied');btn.innerHTML=o;},2200);}
   catch{toast('Copy failed.',true);}
 }
 
-// ── DELETE ────────────────────────────────────────────────────────
 function askDel(id,name){deleteId=id;document.getElementById('delText').textContent=`"${name}" will be permanently removed.`;document.getElementById('delConfirm').classList.add('open');}
 function closeDelConfirm(){deleteId=null;document.getElementById('delConfirm').classList.remove('open');}
 async function confirmDelete(){
@@ -704,23 +610,20 @@ async function confirmDelete(){
   toast('Deleted.');await refresh();
 }
 
-// ── MODAL ─────────────────────────────────────────────────────────
-function openModal(){editId=null;document.getElementById('modalTitle').textContent='Add Supplement';document.getElementById('saveBtn').textContent='Save';['fName','fCountry','fSpec','fWeb','fDose','fLink','fNotes','fVerified'].forEach(id=>document.getElementById(id).value='');document.getElementById('fStock').checked=true;document.getElementById('fRx').checked=false;document.getElementById('dupWarn').classList.remove('show');document.getElementById('modalOverlay').classList.add('open');setTimeout(()=>document.getElementById('fName').focus(),80);}
-function openEdit(id){const r=allData.find(x=>x.id===id);if(!r)return;editId=id;document.getElementById('modalTitle').textContent='Edit Supplement';document.getElementById('saveBtn').textContent='Update';document.getElementById('fName').value=r.name||'';document.getElementById('fCountry').value=r.country||'';document.getElementById('fSpec').value=r.specification||'';document.getElementById('fWeb').value=r.website||'';document.getElementById('fDose').value=r.dose||'';document.getElementById('fLink').value=r.link||'';document.getElementById('fNotes').value=r.notes||'';document.getElementById('fVerified').value=r.last_verified||'';document.getElementById('fStock').checked=r.in_stock!==false;document.getElementById('fRx').checked=r.is_prescription===true;document.getElementById('dupWarn').classList.remove('show');document.getElementById('modalOverlay').classList.add('open');}
+function openModal(){editId=null;document.getElementById('modalTitle').textContent='Add Supplement';document.getElementById('saveBtn').textContent='Save';['fName','fCountry','fSpec','fWeb','fDose','fLink','fNotes','fVerified'].forEach(id=>document.getElementById(id).value='');document.getElementById('fStock').checked=true;document.getElementById('dupWarn').classList.remove('show');document.getElementById('modalOverlay').classList.add('open');setTimeout(()=>document.getElementById('fName').focus(),80);}
+function openEdit(id){const r=allData.find(x=>x.id===id);if(!r)return;editId=id;document.getElementById('modalTitle').textContent='Edit Supplement';document.getElementById('saveBtn').textContent='Update';document.getElementById('fName').value=r.name||'';document.getElementById('fCountry').value=r.country||'';document.getElementById('fSpec').value=r.specification||'';document.getElementById('fWeb').value=r.website||'';document.getElementById('fDose').value=r.dose||'';document.getElementById('fLink').value=r.link||'';document.getElementById('fNotes').value=r.notes||'';document.getElementById('fVerified').value=r.last_verified||'';document.getElementById('fStock').checked=r.in_stock!==false;document.getElementById('dupWarn').classList.remove('show');document.getElementById('modalOverlay').classList.add('open');}
 function closeModal(){document.getElementById('modalOverlay').classList.remove('open');}
 function handleOverlay(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
 function checkDup(){const n=norm(document.getElementById('fName').value),c=norm(document.getElementById('fCountry').value);if(!n){document.getElementById('dupWarn').classList.remove('show');return;}const dup=allData.some(r=>r.id!==editId&&norm(r.name)===n&&(!c||norm(r.country)===c));document.getElementById('dupWarn').classList.toggle('show',dup);}
 
-// ── SAVE ──────────────────────────────────────────────────────────
 async function save(){
-  const p={name:document.getElementById('fName').value.trim(),country:document.getElementById('fCountry').value.trim(),specification:document.getElementById('fSpec').value.trim(),website:document.getElementById('fWeb').value.trim(),dose:document.getElementById('fDose').value.trim(),link:document.getElementById('fLink').value.trim(),notes:document.getElementById('fNotes').value.trim(),last_verified:document.getElementById('fVerified').value||null,in_stock:document.getElementById('fStock').checked, is_prescription:document.getElementById('fRx').checked};
+  const p={name:document.getElementById('fName').value.trim(),country:document.getElementById('fCountry').value.trim(),specification:document.getElementById('fSpec').value.trim(),website:document.getElementById('fWeb').value.trim(),dose:document.getElementById('fDose').value.trim(),link:document.getElementById('fLink').value.trim(),notes:document.getElementById('fNotes').value.trim(),last_verified:document.getElementById('fVerified').value||null,in_stock:document.getElementById('fStock').checked};
   if(!p.name||!p.country){toast('Name and Country required.',true);return;}
   const{error}=editId?await db.from('supplements').update(p).eq('id',editId):await db.from('supplements').insert([p]);
   if(error){toast('Save failed: '+error.message,true);return;}
   toast(editId?'Updated!':'Added!');closeModal();await refresh();
 }
 
-// ── REFRESH ───────────────────────────────────────────────────────
 async function refresh(){
   const{data}=await db.from('supplements').select('*').order('name');
   allData=data||[];
@@ -730,11 +633,10 @@ async function refresh(){
   filterData();
 }
 
-// ── EXPORT ────────────────────────────────────────────────────────
 function exportCSV(){
-  const h=['name','country','specification','website','dose','link','in_stock','is_prescription','last_verified','notes'];
+  const h=['name','country','specification','website','dose','link','in_stock','last_verified','notes'];
   const rows=[h.join(','),...allData.map(r=>h.map(k=>`"${(r[k]===null||r[k]===undefined?'':r[k]).toString().replace(/"/g,'""')}"`).join(','))];
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([rows.join('\n')],{type:'text/csv'}));a.download='supplements_admin.csv';a.click();
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([rows.join('\n')],{type:'text/csv'}));a.download='supplements_export.csv';a.click();
 }
 
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
