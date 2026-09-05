@@ -23,6 +23,7 @@
 html,body{height:100%;overflow:hidden;}
 body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);display:flex;flex-direction:column;font-size:14px;transition:background .25s,color .25s;}
 
+/* ── LOGIN ── */
 .login-screen{display:flex;align-items:center;justify-content:center;position:fixed;inset:0;background:var(--accent-d);z-index:9999;}
 .login-box{background:var(--surface);border-radius:18px;padding:36px;width:100%;max-width:380px;text-align:center;box-shadow:var(--shadow-lg);}
 .login-box h2{font-family:'DM Serif Display',serif;font-size:24px;margin-bottom:6px;}
@@ -32,6 +33,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);dis
 .login-err{color:var(--warn);font-size:12.5px;margin-bottom:10px;display:none;}
 .login-err.show{display:block;}
 
+/* ── LAYOUT ── */
 .app-shell{display:flex;flex:1;overflow:hidden;position:relative;}
 .left-panel{width:300px;min-width:260px;flex-shrink:0;background:var(--panel);color:#fff;display:flex;flex-direction:column;box-shadow:4px 0 24px rgba(0,0,0,.15);z-index:1000;}
 .left-top{padding:22px 22px 16px;border-bottom:1px solid rgba(255,255,255,.08);}
@@ -44,6 +46,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);dis
 .filter-label{font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:4px;}
 .result-count{font-size:11.5px;color:rgba(255,255,255,.38);}
 .result-count strong{color:rgba(255,255,255,.78);}
+
 .search-wrap{position:relative;}
 .search-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.38);pointer-events:none;}
 .search-input{width:100%;padding:9px 11px 9px 33px;border:1.5px solid rgba(255,255,255,.11);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;background:rgba(255,255,255,.06);color:#fff;outline:none;transition:all .18s;}
@@ -52,6 +55,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);dis
 select.fsel{width:100%;padding:9px 30px 9px 11px;border:1.5px solid rgba(255,255,255,.11);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;background:rgba(255,255,255,.06) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,0.38)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 11px center;appearance:none;color:#fff;outline:none;cursor:pointer;transition:all .18s;}
 select.fsel:focus{border-color:rgba(255,255,255,.38);}
 select.fsel option{color:var(--text);background:var(--surface);}
+
 .av-toggle{display:flex;gap:5px;}
 .av-btn{flex:1;padding:6px 6px;border-radius:7px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:500;cursor:pointer;transition:all .15s;text-align:center;}
 .av-btn:hover{background:rgba(255,255,255,.11);color:#fff;}
@@ -59,6 +63,7 @@ select.fsel option{color:var(--text);background:var(--surface);}
 .av-btn.active.in{background:rgba(45,106,79,.55);border-color:#5aab82;}
 .av-btn.active.out{background:rgba(196,69,26,.4);border-color:#e07050;}
 
+/* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:5px;padding:8px 13px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer;border:none;transition:all .15s;white-space:nowrap;flex-shrink:0;}
 .btn-light{background:#fff;color:var(--accent-d);}
 .btn-light:hover{background:rgba(255,255,255,.88);}
@@ -74,6 +79,7 @@ select.fsel option{color:var(--text);background:var(--surface);}
 .btn-danger{background:var(--warn);color:#fff;}
 .btn-danger:hover{background:#a83a16;}
 
+/* ── RIGHT PANEL ── */
 .right-panel{flex:1;display:flex;flex-direction:column;overflow:hidden;background:var(--bg);transition:background .25s;}
 .toolbar{padding:12px 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:var(--surface);flex-shrink:0;gap:10px;transition:background .25s,border-color .25s;}
 .toolbar-right{display:flex;align-items:center;gap:7px;margin-left:auto;}
@@ -93,7 +99,7 @@ select.fsel option{color:var(--text);background:var(--surface);}
 .content{flex:1;overflow-y:auto;padding:18px 22px 40px;}
 .empty-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;height:300px;gap:12px;color:var(--muted);font-size:14px;}
 
-/* SKELETON LOADER */
+/* ── SKELETON LOADER ── */
 .skeleton-wrap { display:flex; flex-direction:column; width:100%; border:1px solid var(--border); border-radius:var(--r); overflow:hidden; background:var(--surface); box-shadow:var(--shadow); }
 .skeleton-row { display:flex; padding:12px; border-bottom:1px solid var(--border); gap:12px; align-items:center; }
 .skeleton-row:last-child { border-bottom:none; }
@@ -103,7 +109,7 @@ select.fsel option{color:var(--text);background:var(--surface);}
 .sk-1 { width:15%; } .sk-2 { width:9%; } .sk-3 { width:11%; } .sk-4 { width:12%; height:20px; border-radius:100px; } .sk-5 { width:7%; } .sk-6 { width:15%; }
 @keyframes sk-pulse { 0%,100%{opacity:1;} 50%{opacity:.4;} }
 
-/* TABLE */
+/* ── TABLE ── */
 .table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);}
 table{width:100%;border-collapse:collapse;table-layout:fixed;}
 col.c0{width:38px;}col.c1{width:15%;}col.c2{width:9%;}col.c3{width:11%;}col.c4{width:12%;}col.c5{width:7%;}col.c6{width:9%;}col.c7{width:11%;}col.c8{width:12%;}
@@ -119,7 +125,7 @@ td.ctr{text-align:center;}
 .name-cell{font-weight:600;color:var(--text);}
 .name-cell small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
-/* DYNAMIC TAGS */
+/* ── DYNAMIC TAGS ── */
 .tag{display:inline-flex;align-items:center;padding:2px 8px;border-radius:100px;font-size:11px;font-weight:600;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:1px solid transparent;}
 .tag-source{background:#E6EAF4;color:#2D4280;}
 [data-theme="dark"] .tag-source{background:#1A1F3A;color:#7B9FE8;}
@@ -157,11 +163,13 @@ td.ctr{text-align:center;}
 .verify-btn{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;color:var(--muted);background:none;border:1px solid var(--border);border-radius:5px;padding:2px 6px;cursor:pointer;transition:all .14s;}
 .verify-btn:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-l);}
 
-/* USER REPORTED badge */
+/* USER REPORTED badge & Rx */
 .usr-rep{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px;background:#fff3e0;border:1px solid #ffb74d;color:#e65100;white-space:nowrap;}
 [data-theme="dark"] .usr-rep{background:#2a1a00;border-color:#b85c00;color:#ffb74d;}
+.rx-badge{ display:inline-flex;align-items:center;gap:3px; background:#1a1a2e;color:#e8c84a; border:1px solid #e8c84a44; border-radius:4px;font-size:9.5px;font-weight:700; padding:1px 6px;letter-spacing:.4px;text-transform:uppercase; flex-shrink:0;cursor:default; }
+tbody tr.rx-row td:first-child{ border-left:3px solid #e8c84a; }
 
-/* LINK BTNS */
+/* ── LINK BTNS ── */
 .link-acts{display:flex;gap:4px;}
 .lbtn{display:inline-flex;align-items:center;gap:3px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;padding:4px 8px;border-radius:6px;border:1.5px solid;cursor:pointer;transition:all .14s;white-space:nowrap;text-decoration:none;}
 .lbtn-open{background:var(--accent-l);border-color:#b4d9c8;color:var(--accent-d);}
@@ -176,19 +184,18 @@ td.ctr{text-align:center;}
 .act-btn:hover{background:var(--accent-l);border-color:var(--accent);color:var(--accent-d);}
 .act-btn.del:hover{background:var(--warn-l);border-color:var(--warn);color:var(--warn);}
 
-/* SUGGESTIONS PANEL */
+/* ── SUGGESTIONS PANEL ── */
 .sugg-panel{padding:18px 22px 40px;}
 .sugg-title{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:16px;color:var(--text);}
 .sugg-empty{color:var(--muted);font-size:14px;text-align:center;padding:40px;}
-.sugg-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:8px;box-shadow:var(--shadow);display:flex;align-items:flex-start;justify-content:space-between;gap:14px;}
-.sugg-info{flex:1;min-width:0;}
-.sugg-name{font-weight:600;font-size:14px;color:var(--text);}
-.sugg-meta{font-size:12px;color:var(--muted);margin-top:3px;}
-.sugg-link a{color:var(--accent);text-decoration:none;font-size:12px;word-break:break-all;}
-.sugg-link a:hover{text-decoration:underline;}
-.sugg-acts{display:flex;gap:6px;align-items:center;flex-shrink:0;flex-direction:column;}
+.sugg-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;margin-bottom:8px;box-shadow:var(--shadow);display:flex;align-items:flex-start;justify-content:space-between;gap:20px;}
+.sugg-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:12px;}
+.sugg-name{font-weight:600;font-size:16px;color:var(--text);}
+.sugg-meta{font-size:12px;color:var(--muted);margin-top:-6px;display:flex;align-items:center;gap:8px;}
+.sugg-link-box {background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:12px 16px; display:flex; flex-direction:column; gap:10px; margin-top:4px;}
+.sugg-acts{display:flex;gap:6px;align-items:center;flex-shrink:0;flex-direction:column;padding-left:20px;border-left:1px dashed var(--border);width:140px;}
 
-/* MODALS */
+/* ── MODALS ── */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,8,6,.6);z-index:500;align-items:center;justify-content:center;backdrop-filter:blur(4px);}
 .modal-overlay.open{display:flex;}
 .modal{background:var(--surface);border-radius:18px;padding:26px;width:100%;max-width:520px;box-shadow:var(--shadow-lg);animation:fadeUp .2s ease;max-height:92vh;overflow-y:auto;}
@@ -218,7 +225,7 @@ td.ctr{text-align:center;}
 .del-box p{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.5;}
 .del-box-acts{display:flex;gap:8px;justify-content:center;}
 
-/* SLIDE */
+/* ── SLIDE ── */
 .slide-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:300;backdrop-filter:blur(2px);}
 .slide-overlay.open{display:block;}
 .slide-panel{position:fixed;right:0;top:0;bottom:0;width:380px;background:var(--surface);box-shadow:var(--shadow-lg);z-index:301;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);}
@@ -237,7 +244,7 @@ td.ctr{text-align:center;}
 #toast.show{transform:translateY(0);opacity:1;}
 #toast.err{background:var(--warn);}
 
-/* ── MOBILE BOTTOM SHEET (Admin adapted) ── */
+/* ── MOBILE BOTTOM SHEET ── */
 @media(min-width:861px){
   .filter-overlay, .handle-area, .mobile-header, .mobile-filter-btn { display: none; }
 }
@@ -248,7 +255,7 @@ td.ctr{text-align:center;}
     position:fixed; bottom:0; left:0; width:100%;
     height:auto; max-height:85vh; padding-bottom:env(safe-area-inset-bottom);
     transform:translateY(100%); transition:transform 0.35s cubic-bezier(0.32, 1, 0.23, 1);
-    border-radius:24px 24px 0 0; background:var(--panel);
+    border-radius:24px 24px 0 0; background:var(--panel); z-index:2000;
   }
   .left-panel.sheet-open{ transform:translateY(0); }
   
@@ -256,7 +263,7 @@ td.ctr{text-align:center;}
   .mobile-sheet-handle { width:45px; height:5px; background:rgba(255,255,255,0.25); border-radius:10px; }
   
   .filter-overlay {
-    display:block; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:999;
+    display:block; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:1999;
     opacity:0; pointer-events:none; transition:opacity 0.35s ease; backdrop-filter:blur(2px);
   }
   .filter-overlay.sheet-open { opacity:1; pointer-events:auto; }
@@ -275,6 +282,8 @@ td.ctr{text-align:center;}
   .stats-bar{padding:6px 14px;}
   .left-filters{padding:0 18px 16px;}
   .left-actions{padding:0 18px 12px;}
+  .sugg-card{flex-direction:column;}
+  .sugg-acts{width:100%; border-left:none; border-top:1px dashed var(--border); padding-left:0; padding-top:14px; margin-top:8px;}
 }
 @media print{.mobile-header,.filter-overlay,.left-panel,.toolbar,.stats-bar,.avail-pill,.act-btn,.lbtn-copy,.verify-btn,#toast{display:none!important;}.app-shell{display:block;}.right-panel{overflow:visible;}.content{padding:0;}body,[data-theme="dark"]{background:#fff!important;color:#000!important;}.table-wrap{box-shadow:none;border:1px solid #ccc;}}
 </style>
@@ -484,7 +493,23 @@ document.addEventListener('keydown',e=>{
 
 function norm(s){return(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');}
 
-// ── BOTTOM SHEET DRAG LOGIC ──────────────────────────────────────
+// ── NORMALIZERS ──
+function normalizeSource(src) {
+  if (!src) return '';
+  const s = src.trim().toLowerCase();
+  if (s.includes('iherb')) return 'I herb';
+  if (s.includes('vitacost')) return 'vitacost';
+  if (s.includes('amura')) return 'AMURA';
+  return src;
+}
+function normalizeCountry(cty) {
+  if (!cty) return '';
+  const c = cty.trim().toLowerCase();
+  if (c === 'united kingdom') return 'UK';
+  return cty;
+}
+
+// ── BOTTOM SHEET DRAG LOGIC ──
 function toggleFilters(){
   const panel = document.getElementById('leftPanel');
   const overlay = document.getElementById('filterOverlay');
@@ -509,7 +534,7 @@ if(handleArea) {
   handleArea.addEventListener('touchend', (e) => { panel.style.transition = ''; const dy = currentY - startY; if (dy > 80) { toggleFilters(); } else { panel.style.transform = ''; } currentY = 0; });
 }
 
-// ── COLOR HELPERS ────────────────────────────────────────────────
+// ── COLOR HELPERS ──
 function specClass(s) {
   if (!s) return 'tag-spec-neutral';
   const l = s.toLowerCase();
@@ -550,9 +575,27 @@ function updateSuggBadge(){
 
 function populateFilters(){
   const u=k=>[...new Set(allData.map(r=>r[k]).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
-  fillSel('nameFilter',u('name'),'All');fillSel('countryFilter',u('country'),'All');fillSel('sourceFilter',u('website'),'All');fillSel('specFilter',u('specification'),'All');
-  fillDL('nameList',u('name'));fillDL('countryList',u('country'));fillDL('specList',u('specification'));fillDL('sourceList',u('website'));
+  
+  // Apply normalization for dropdown lists
+  const names = u('name');
+  const specs = u('specification');
+  const rawCountries = u('country');
+  const rawSources = u('website');
+  
+  const normCountries = [...new Set(rawCountries.map(normalizeCountry))].sort();
+  const normSources = [...new Set(rawSources.map(normalizeSource))].sort();
+
+  fillSel('nameFilter', names, 'All');
+  fillSel('countryFilter', normCountries, 'All');
+  fillSel('sourceFilter', normSources, 'All');
+  fillSel('specFilter', specs, 'All');
+  
+  fillDL('nameList', names);
+  fillDL('countryList', normCountries);
+  fillDL('specList', specs);
+  fillDL('sourceList', normSources);
 }
+
 function fillSel(id,arr,ph){const el=document.getElementById(id),cur=el.value;el.innerHTML=`<option value="">${ph}</option>`+arr.map(v=>`<option value="${esc(v)}"${v===cur?' selected':''}>${esc(v)}</option>`).join('');}
 function fillDL(id,arr){const el=document.getElementById(id);if(el)el.innerHTML=arr.map(v=>`<option value="${esc(v)}">`).join('');}
 function setAv(v){avFilter=v;document.querySelectorAll('.av-btn').forEach(b=>b.classList.remove('active'));document.getElementById('av'+v.charAt(0).toUpperCase()+v.slice(1)).classList.add('active');filterData();}
@@ -563,12 +606,14 @@ function filterData(){
   const name=document.getElementById('nameFilter').value,country=document.getElementById('countryFilter').value,source=document.getElementById('sourceFilter').value,spec=document.getElementById('specFilter').value;
   
   const filtered=allData.filter(r=>{
-    const hay=norm((r.name||'')+(r.website||'')+(r.dose||'')+(r.notes||'')+(r.specification||'')+(r.country||''));
+    const normC = normalizeCountry(r.country);
+    const normS = normalizeSource(r.website);
+    const hay=norm((r.name||'')+(normS||'')+(r.dose||'')+(r.notes||'')+(r.specification||'')+(normC||''));
     const matchQ = searchTerms.length === 0 || searchTerms.every(term => hay.includes(term));
-    return matchQ &&(!name||r.name===name)&&(!country||r.country===country)&&(!source||r.website===source)&&(!spec||r.specification===spec)&&(avFilter==='all'||(avFilter==='in'&&r.in_stock!==false)||(avFilter==='out'&&r.in_stock===false));
+    return matchQ &&(!name||r.name===name)&&(!country||normC===country)&&(!source||normS===source)&&(!spec||r.specification===spec)&&(avFilter==='all'||(avFilter==='in'&&r.in_stock!==false)||(avFilter==='out'&&r.in_stock===false));
   });
   
-  document.getElementById('suggBtn').classList.remove('active'); // reset view
+  document.getElementById('suggBtn').classList.remove('active'); 
   renderStats(filtered);
   renderTable(filtered);
 }
@@ -578,7 +623,7 @@ function clearAll(){document.getElementById('searchInput').value='';['nameFilter
 function renderStats(rows){
   const outs=rows.filter(r=>r.in_stock===false).length;
   const supps=new Set(rows.map(r=>r.name).filter(Boolean)).size;
-  const countries=new Set(rows.map(r=>r.country).filter(Boolean)).size;
+  const countries=new Set(rows.map(r=>normalizeCountry(r.country)).filter(Boolean)).size;
   const reportedIds=new Set(pendingSuggs.map(s=>s.supplement_id));
   const userReported=rows.filter(r=>reportedIds.has(r.id)).length;
   document.getElementById('statsBar').innerHTML=
@@ -602,6 +647,8 @@ function renderTable(rows){
     <th>Specification</th><th>Dose</th><th>Verified</th><th>Link</th><th>Actions</th>
   </tr></thead>
   <tbody>${rows.map(r=>{
+    const normC = normalizeCountry(r.country);
+    const normS = normalizeSource(r.website);
     const ok=r.in_stock!==false;
     const vHTML=verifyHTML(r.last_verified,today);
     const lHTML=r.link?`<div class="link-acts"><a class="lbtn lbtn-open" href="${esc(r.link)}" target="_blank" rel="noopener">Open</a><button class="lbtn lbtn-copy" onclick="copyLink(this,'${esc(r.link)}')">Copy</button></div>`:`<span style="color:var(--muted);font-size:11px">—</span>`;
@@ -609,8 +656,8 @@ function renderTable(rows){
     return`<tr class="${ok?'':'oos'}">
       <td class="ctr"><button class="avail-pill ${ok?'in':'out'}" onclick="toggleStock(${r.id},${ok})" title="Click to toggle">${ok?'✓':'✕'}</button></td>
       <td class="name-cell" title="${esc(r.name)}">${esc(r.name)}${repBadge?`<small style="white-space:normal">${repBadge}</small>`:''}${r.notes?`<small>${esc(r.notes)}</small>`:''}</td>
-      <td><span class="tag ${countryClass(r.country)}">${esc(r.country||'—')}</span></td>
-      <td>${r.website?`<span class="tag tag-source">${esc(r.website)}</span>`:'<span style="color:var(--muted)">—</span>'}</td>
+      <td><span class="tag ${countryClass(normC)}">${esc(normC||'—')}</span></td>
+      <td>${normS?`<span class="tag tag-source">${esc(normS)}</span>`:'<span style="color:var(--muted)">—</span>'}</td>
       <td>${r.specification?`<span class="tag ${specClass(r.specification)}">${esc(r.specification)}</span>`:'<span style="color:var(--muted)">—</span>'}</td>
       <td style="font-weight:600;font-size:12px">${esc(r.dose||'—')}</td>
       <td><div style="display:flex;flex-direction:column;gap:3px">${vHTML}<button class="verify-btn" onclick="markVerified(${r.id})">✓ Verify</button></div></td>
@@ -632,44 +679,80 @@ function verifyHTML(lv,today){
   return`<span class="vdate stale">⚠ ${label}</span>`;
 }
 
-// SUGGESTIONS VIEW
+// ── SUGGESTIONS VIEW (UPGRADED UI) ──
 async function showSuggestions(){
   const {data,error}=await db.from('suggestions').select('*').eq('reviewed',false).order('created_at',{ascending:false});
   const el=document.getElementById('content');
   document.getElementById('suggBtn').classList.add('active');
+  
   if(error){el.innerHTML=`<div class="empty-wrap" style="color:var(--warn)">Failed to load.</div>`;return;}
+  
   const rows=data||[];
   pendingSuggs=rows;
   updateSuggBadge();
+  
   if(!rows.length){
     el.innerHTML=`<div class="sugg-panel"><div class="sugg-title">User Reports</div><div class="sugg-empty">No pending reports. All clear ✓</div></div>`;
     return;
   }
+  
   el.innerHTML=`<div class="sugg-panel">
     <div class="sugg-title">User Reports <span style="font-size:14px;font-weight:400;color:var(--muted)">(${rows.length} pending)</span></div>
-    ${rows.map(s=>{
+    
+    ${rows.map(s => {
       const origSupp = allData.find(x => x.id === s.supplement_id);
       const origLink = origSupp && origSupp.link ? origSupp.link : null;
-      return `<div class="sugg-card" id="sc-${s.id}">
-      <div class="sugg-info">
-        <div class="sugg-name">${esc(s.supplement_name||'—')}</div>
-        <div class="sugg-meta">Country: ${esc(s.country||'—')} · Reported out of stock · ${new Date(s.created_at).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</div>
-        
-        ${origLink ? `<div style="margin-top:8px;margin-bottom:4px;"><span style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;">Current Link:</span> <a href="${esc(origLink)}" target="_blank" rel="noopener" style="font-size:12.5px;color:var(--accent);margin-left:4px;font-weight:500;">↗ Open Original Link</a></div>` : ''}
+      
+      let rawNotes = s.notes || '';
+      const isRx = rawNotes.includes('[PRESCRIPTION ITEM]');
+      let cleanNotes = rawNotes.replace('[PRESCRIPTION ITEM]', '').trim();
+      if(cleanNotes.startsWith('-') || cleanNotes.startsWith(':')) {
+         cleanNotes = cleanNotes.substring(1).trim();
+      }
 
-        ${s.suggested_link
-          ?`<div style="display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap;">
-              <span style="font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;">Suggested link</span>
-              <a class="lbtn lbtn-open" href="${esc(s.suggested_link)}" target="_blank" rel="noopener" style="padding:4px 10px;font-size:11.5px;">↗ Open Suggestion</a>
-            </div>`
-          :'<div class="sugg-meta" style="margin-top:2px">No alternative link suggested</div>'}
-        ${s.notes?`<div class="sugg-meta" style="margin-top:4px">Note: ${esc(s.notes)}</div>`:''}
+      const dateStr = new Date(s.created_at).toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'});
+
+      return `<div class="sugg-card" id="sc-${s.id}" style="padding: 18px; gap: 20px;">
+      
+      <div class="sugg-info" style="display:flex; flex-direction:column; gap:12px;">
+        
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div class="sugg-name" style="font-size:16px;">${esc(s.supplement_name||'—')}</div>
+          ${isRx ? `<span class="rx-badge" style="transform:translateY(-1px)">Rx</span>` : ''}
+          <span class="tag ${countryClass(normalizeCountry(s.country))}" style="margin-left:auto;">${esc(normalizeCountry(s.country)||'—')}</span>
+        </div>
+        
+        <div class="sugg-meta" style="display:flex; align-items:center; gap:8px; margin-top:-6px;">
+          <span style="color:var(--warn); font-weight:600;">⚠ Reported Out of Stock</span>
+          <span style="color:var(--border);">|</span>
+          <span>${dateStr}</span>
+        </div>
+        
+        <div class="sugg-link-box">
+          ${origLink ? `
+            <div style="display:flex; align-items:center; gap:12px;">
+              <span style="font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; width:100px;">Current Link</span>
+              <a class="lbtn lbtn-copy" style="background:var(--surface); text-decoration:none; font-weight:500;" href="${esc(origLink)}" target="_blank" rel="noopener">↗ Open Original</a>
+            </div>` : ''}
+          ${s.suggested_link ? `
+            <div style="display:flex; align-items:center; gap:12px;">
+              <span style="font-size:10px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.5px; width:100px;">Suggested Link</span>
+              <a class="lbtn lbtn-open" href="${esc(s.suggested_link)}" target="_blank" rel="noopener" style="font-weight:600;">↗ Open Suggestion</a>
+            </div>` : ''}
+        </div>
+
+        ${cleanNotes ? `
+          <div class="sugg-meta" style="margin-top:2px; padding-left:8px; border-left:2px solid var(--border); color:var(--text);">
+            <strong style="color:var(--muted)">User Note:</strong> ${esc(cleanNotes)}
+          </div>` : ''}
       </div>
+      
       <div class="sugg-acts">
-        <button class="act-btn del" onclick="dismissSugg(${s.id})">Dismiss</button>
-        ${s.suggested_link?`<button class="act-btn" onclick="applySugg(${s.supplement_id},'${esc(s.suggested_link)}',${s.id})">Apply Link</button>`:''}
-        <button class="act-btn" style="color:var(--warn);border-color:var(--warn)" onclick="markOOS(${s.supplement_id},${s.id})">Mark OOS</button>
+        <button class="btn btn-cancel" style="width:100%; justify-content:center; padding:10px;" onclick="dismissSugg(${s.id})">Dismiss</button>
+        ${s.suggested_link ? `<button class="btn btn-save" style="width:100%; justify-content:center; padding:10px; margin-top:4px;" onclick="applySugg(${s.supplement_id},'${esc(s.suggested_link)}',${s.id})">Apply Link</button>` : ''}
+        <button class="btn btn-danger" style="width:100%; justify-content:center; padding:10px; margin-top:4px;" onclick="markOOS(${s.supplement_id},${s.id})">Mark OOS</button>
       </div>
+      
     </div>`}).join('')}
   </div>`;
 }
@@ -688,16 +771,19 @@ async function markOOS(suppId,suggId){
   toast('Marked out of stock.');await refresh();await showSuggestions();
 }
 
-// SLIDE
+// ── SLIDE ──
 function openSlide(id){
   const r=allData.find(x=>x.id===id);if(!r)return;
   const today=new Date();today.setHours(0,0,0,0);
   const reportedIds=new Set(pendingSuggs.map(s=>s.supplement_id));
+  const normC = normalizeCountry(r.country);
+  const normS = normalizeSource(r.website);
+  
   document.getElementById('spTitle').textContent=r.name;
   document.getElementById('spBody').innerHTML=`
-    <div class="sp-row"><div class="sp-lbl">Country</div><div class="sp-val"><span class="tag ${countryClass(r.country)}">${esc(r.country||'—')}</span></div></div>
+    <div class="sp-row"><div class="sp-lbl">Country</div><div class="sp-val"><span class="tag ${countryClass(normC)}">${esc(normC||'—')}</span></div></div>
     <div class="sp-row"><div class="sp-lbl">Specification</div><div class="sp-val">${r.specification?`<span class="tag ${specClass(r.specification)}">${esc(r.specification)}</span>`:'—'}</div></div>
-    <div class="sp-row"><div class="sp-lbl">Source</div><div class="sp-val">${r.website?`<span class="tag tag-source">${esc(r.website)}</span>`:'—'}</div></div>
+    <div class="sp-row"><div class="sp-lbl">Source</div><div class="sp-val">${normS?`<span class="tag tag-source">${esc(normS)}</span>`:'—'}</div></div>
     <div class="sp-row"><div class="sp-lbl">Dose</div><div class="sp-val" style="font-weight:600">${esc(r.dose||'—')}</div></div>
     <div class="sp-row"><div class="sp-lbl">Admin Stock Status</div><div class="sp-val">${r.in_stock!==false?'<span style="color:var(--accent);font-weight:600">✓ In Stock</span>':'<span style="color:var(--warn);font-weight:600">✕ Out of Stock</span>'}</div></div>
     ${reportedIds.has(r.id)?`<div class="sp-row"><div class="sp-lbl">User Report</div><div class="sp-val"><span class="usr-rep">⚑ Reported out of stock by user</span></div></div>`:''}
